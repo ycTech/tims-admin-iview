@@ -37,7 +37,6 @@ export default {
     }
   },
   mounted () {
-    console.log('mounted')
     this.getList()
   },
   methods: {
@@ -52,7 +51,6 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import "~styles/common.less";
+<style>
 
 </style>
