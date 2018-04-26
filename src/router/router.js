@@ -226,42 +226,72 @@ export const appRouter = [
       path: '',
       icon: 'ios-grid-view',
       title: '单据管理',
-      name: 'documentManagement',
+      name: 'invoice',
       component: Main,
       children: [
-          { path: 'document-search', title: '单据查询', name: 'documentManagement_search', component: () => import('@/views/documentManagement/documentManagementSearch.vue') }
+          { path: 'invoice-search', title: '单据查询', name: 'invoice.search', component: () => import('@/views/tims/invoice/Search.vue') }
       ]
     },
     {
       path: '',
       icon: 'ios-grid-view',
       title: '影像管理',
-      name: 'imageManagement',
+      name: 'media',
       component: Main,
       children: [
-          { path: 'image-search', title: '单据查询', name: 'imageManagementSearch', component: () => import('@/views/imageManagement/imageManagementSearch.vue') },
-          { path: 'image-scanning', title: '单据查询', name: 'imageManagementScanning', component: () => import('@/views/imageManagement/imageManagementScanning.vue') }
+          { path: 'media-scan', title: '影像扫描', name: 'media.scan', component: () => import('@/views/tims/media/ImageScan.vue') },
+          { path: 'media-view', title: '影像查看', name: 'media.view', component: () => import('@/views/tims/media/ImageView.vue') }
       ]
     },
     {
       path: '',
       icon: 'ios-grid-view',
       title: '系统管理',
-      name: 'systemManagement',
+      name: 'system',
       component: Main,
       children: [
-          { path: 'role-management', title: '角色管理', name: 'roleManagement', component: () => import('@/views/systemManagement/roleManagement.vue') },
-          { path: 'user-management', title: '用户管理', name: 'userManagement', component: () => import('@/views/systemManagement/userManagement.vue') }
+          { path: 'system-role', title: '角色管理', name: 'system.role', component: () => import('@/views/tims/system/Role.vue') },
+          { path: 'system-user', title: '用户管理', name: 'system.user', component: () => import('@/views/tims/system/User.vue') },
+          { path: 'system-functional', title: '功能权限', name: 'system.functional', component: () => import('@/views/tims/system/Functional.vue') },
+          { path: 'system-permission', title: '权限管理', name: 'system.permission', component: () => import('@/views/tims/system/Permission.vue') },
+          { path: 'system-operation_log', title: '操作日志', name: 'system.operation_log', component: () => import('@/views/tims/system/OperationLog.vue') },
+          { path: 'system-login_log', title: '登录日志', name: 'system.login_log', component: () => import('@/views/tims/system/LoginLog.vue') },
+      ]
+    },
+    {
+      path: '',
+      icon: 'ios-grid-view',
+      title: '参数管理',
+      name: 'params',
+      component: Main,
+      children: [
+          { path: 'params-app_sys', title: '应用系统管理', name: 'params.app_sys', component: () => import('@/views/tims/params/AppSys.vue') },
+          { path: 'params-organization', title: '机构管理', name: 'params.organization', component: () => import('@/views/tims/params/Organization.vue') },
+          { path: 'params-bill_type', title: '单据类型', name: 'params.bill_type', component: () => import('@/views/tims/params/BillType.vue') },
+          { path: 'params-file_directory', title: '文件目录管理', name: 'params.file_directory', component: () => import('@/views/tims/params/FileDirectory.vue') }
       ]
     },
     {
       path: '',
       icon: 'ios-grid-view',
       title: '软件管理',
-      name: 'softwareManagement',
+      name: 'software',
       component: Main,
       children: [
-          { path: 'index', title: '客户端上传', name: 'clientUpload', component: () => import('@/views/softwareManagement/clientUpload.vue') },
+          { path: 'softwrae-agent_upload', title: '客户端上传', name: 'software.agent_upload', component: () => import('@/views/tims/software/AgentUpload.vue') },
+      ]
+    },
+    {
+      path: '',
+      icon: 'ios-grid-view',
+      title: '监控管理',
+      name: 'monitor',
+      component: Main,
+      children: [
+          { path: 'monitor-role', title: '容量监控', name: 'monitor.role', component: () => import('@/views/tims/monitor/Capacity.vue') },
+          { path: 'monitor-user', title: '流量监控', name: 'monitor.user', component: () => import('@/views/tims/monitor/Flow.vue') },
+          { path: 'monitor-functional', title: '预警设置', name: 'monitor.functional', component: () => import('@/views/tims/monitor/WarningConfig.vue') },
+          { path: 'monitor-permission', title: '通知管理', name: 'monitor.permission', component: () => import('@/views/tims/monitor/Notify.vue') }
       ]
     }
 ];
